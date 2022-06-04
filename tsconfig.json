@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ESNext",
+        "sourceMap": true,
+        "moduleResolution": "Node",
+        "skipLibCheck": true,
+        "strict": true,
+        "isolatedModules": true,
+        "allowSyntheticDefaultImports": true,
+        "lib": [
+            "ESNext"
+        ],
+        "types": [
+            "node",
+            "vite/client"
+        ],
+        "typeRoots": [
+            "node_modules/@types",
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

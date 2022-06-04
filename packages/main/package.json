@@ -1,0 +1,10 @@
+{
+    "name": "@clg/main",
+    "version": "0.0.0",
+    "dependencies": {
+        "log4js": "^6.5.2"
+    },
+    "devDependencies": {
+        "electron": "^19.0.3"
+    }
+}

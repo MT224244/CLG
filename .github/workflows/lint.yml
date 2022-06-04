@@ -1,0 +1,31 @@
+name: Lint
+
+on:
+    push:
+    pull_request:
+
+env:
+    NODE_VERSION: 16
+
+jobs:
+    lint:
+        name: Lint
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+
+          - name: Setup Node v${{ env.NODE_VERSION }}
+            uses: actions/setup-node@v2
+            with:
+                node-version: ${{ env.NODE_VERSION }}
+                cache: 'yarn'
+
+          - name: Install dependencies
+            run: yarn --frozen-lockfile --non-interactive --network-timeout 300000
+
+          - name: lint
+            run: |
+                yarn run eslint "packages/main/src/**/*.ts"
+                yarn run eslint "packages/preload/src/**/*.ts"
+                yarn run eslint "packages/renderer/src/**/*.{ts,tsx}"
